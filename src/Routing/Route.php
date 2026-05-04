@@ -19,13 +19,13 @@ class Route {
     public static function post(string $path, Closure|array $handler): self {
         return new self($path, 'POST', $handler);
     }
-    public function path() {
+    public function path(): string {
         return $this->path;
     }
-    public function method() {
+    public function method(): string {
         return $this->method;
     }
-    public function handler() {
+    public function handler(): Closure|array {
         return $this->handler;
     }
 }

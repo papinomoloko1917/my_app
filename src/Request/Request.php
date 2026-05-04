@@ -11,7 +11,7 @@ class Request {
         private string $path,
     ) {
     }
-    public static function createFromGlobals() {
+    public static function createFromGlobals(): self {
         $uri = $_SERVER['REQUEST_URI'] ?? '/';
         $method = $_SERVER['REQUEST_METHOD'] ?? 'GET';
         $rawPath = parse_url($uri, PHP_URL_PATH) ?? '/';
@@ -27,13 +27,13 @@ class Request {
             path: $path,
         );
     }
-    public function uri() {
+    public function uri(): string {
         return $this->uri;
     }
-    public function method() {
+    public function method(): string {
         return $this->method;
     }
-    public function path() {
+    public function path(): string {
         return $this->path;
     }
 }

@@ -15,7 +15,7 @@ class Router {
     ) {
     }
 
-    public function resolve() {
+    public function resolve(): Route {
         $pathExists = false;
         foreach ($this->routes as $route) {
             if ($route->path() === $this->path) {

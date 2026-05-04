@@ -17,10 +17,13 @@ class App {
             $targetRoute = $this->container
                 ->router
                 ->resolve();
-            $handle = $this->container
+            $controller = $this->container
                 ->dispatcher
-                ->dispatch($targetRoute);
-            echo $handle;
+                ->dispatch(
+                    $targetRoute,
+                    $this->container->view,
+                );
+            echo $controller;
         } catch (Throwable $e) {
             echo $e->getMessage();
         }

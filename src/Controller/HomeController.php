@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-class HomeController {
-    public function index() {
-        return 'Домашняя страница';
+class HomeController extends Controller {
+    public function index(): string {
+        return $this->view->page('home');
     }
 }
